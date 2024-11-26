@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useGetUserID } from "../hooks/useGetUserID";
 import { useCookies } from "react-cookie";
-import "jspdf-autotable";
 
 import ReactDOM from "react-dom";
 import Modal from "react-modal";
