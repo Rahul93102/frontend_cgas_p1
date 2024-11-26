@@ -8,7 +8,7 @@ import ReactDOM from "react-dom";
 import Modal from "react-modal";
 
 import jsPDF from "jspdf";
-const server = "http://localhost:3001";
+const server = "https://backend-p1-cgas.onrender.com";
 
 // const server = process.env.REACT_APP_SERVER_URL;
 const generatePDF = (recipe) => {

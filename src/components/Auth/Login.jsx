@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
 // const server = process.env.REACT_APP_SERVER_URL;
-const server = "http://localhost:3001";
+const server = "https://backend-p1-cgas.onrender.com";
 
 export const Login = () => {
   return (

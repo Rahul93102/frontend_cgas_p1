@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
 // const server = process.env.REACT_APP_SERVER_URL;
-const server = "http://localhost:3001";
+const server = "https://backend-p1-cgas.onrender.com";
 
 const AddRecipes = () => {
   const userID = useGetUserID();
