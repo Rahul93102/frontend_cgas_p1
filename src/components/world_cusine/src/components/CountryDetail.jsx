@@ -22,15 +22,12 @@ import RecipeGallery from "./RecipeGallery";
 import CulturalInsights from "./CulturalInsights";
 import PhotoGallery from "./PhotoGallery";
 
-// used to define the country detail and fetch in through world cusine.
 const CountryDetail = () => {
-  // Retrieve the country code from the URL parameters
   const { code } = useParams();
   const navigate = useNavigate();
   const country = code ? countryData[code] : null;
   const [activeTab, setActiveTab] = useState("overview");
 
-  // If no country data is found, display a message and a button to go back to the map
   if (!country) {
     return (
       <div className="min-h-screen bg-gray-900 text-white p-8">
@@ -38,7 +35,7 @@ const CountryDetail = () => {
           <h1 className="text-2xl font-bold mb-4">Country not found</h1>
           <button
             onClick={() => navigate("/")}
-            className="flex items-center text-[#ffc20d] hover:text-blue-300"
+            className="flex items-center text-blue-400 hover:text-blue-300"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Map
@@ -47,8 +44,6 @@ const CountryDetail = () => {
       </div>
     );
   }
-
-  // If no countrytabs
 
   const tabs = [
     { id: "overview", label: "Overview", icon: Globe },
@@ -83,25 +78,25 @@ const CountryDetail = () => {
               <div className="flex flex-wrap gap-6 text-sm text-gray-300 mb-6">
                 {country.capital && (
                   <div className="flex items-center gap-2 bg-gray-700 px-4 py-2 rounded-full">
-                    <MapPin className="w-4 h-4 text-[#ffc20d]" />
+                    <MapPin className="w-4 h-4 text-blue-400" />
                     <span>Capital: {country.capital}</span>
-                  </div> // used to define the country capial and names
+                  </div>
                 )}
                 {country.population && (
                   <div className="flex items-center gap-2 bg-gray-700 px-4 py-2 rounded-full">
-                    <Population className="w-4 h-4 text-[#ffc20d]" />
+                    <Population className="w-4 h-4 text-blue-400" />
                     <span>Population: {country.population}</span>
                   </div>
                 )}
                 {country.currency && (
                   <div className="flex items-center gap-2 bg-gray-700 px-4 py-2 rounded-full">
-                    <Coins className="w-4 h-4 text-[#ffc20d]" />
+                    <Coins className="w-4 h-4 text-blue-400" />
                     <span>Currency: {country.currency}</span>
-                  </div> // used to define the country currency there
+                  </div>
                 )}
                 {country.timeZone && (
                   <div className="flex items-center gap-2 bg-gray-700 px-4 py-2 rounded-full">
-                    <Clock className="w-4 h-4 text-[#ffc20d]" />
+                    <Clock className="w-4 h-4 text-blue-400" />
                     <span>Time Zone: {country.timeZone}</span>
                   </div>
                 )}
@@ -119,7 +114,7 @@ const CountryDetail = () => {
                     onClick={() => setActiveTab(id)}
                     className={`flex items-center gap-2 px-4 py-4 border-b-2 transition-colors ${
                       activeTab === id
-                        ? "border-blue-400 text-[#ffc20d]"
+                        ? "border-blue-400 text-blue-400"
                         : "border-transparent text-gray-400 hover:text-gray-300"
                     }`}
                   >
@@ -135,7 +130,7 @@ const CountryDetail = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                   <div className="bg-gray-700 p-6 rounded-lg">
                     <div className="flex items-center mb-4">
-                      <Book className="w-6 h-6 mr-3 text-[#ffc20d]" />
+                      <Book className="w-6 h-6 mr-3 text-blue-400" />
                       <h2 className="text-xl font-semibold">Quick Facts</h2>
                     </div>
                     <ul className="space-y-3">
@@ -156,7 +151,7 @@ const CountryDetail = () => {
 
                   <div className="bg-gray-700 p-6 rounded-lg">
                     <div className="flex items-center mb-4">
-                      <Landmark className="w-6 h-6 mr-3 text-[#ffc20d]" />
+                      <Landmark className="w-6 h-6 mr-3 text-blue-400" />
                       <h2 className="text-xl font-semibold">Landmarks</h2>
                     </div>
                     <ul className="space-y-2">
@@ -174,7 +169,7 @@ const CountryDetail = () => {
 
                   <div className="bg-gray-700 p-6 rounded-lg">
                     <div className="flex items-center mb-4">
-                      <Music className="w-6 h-6 mr-3 text-[#ffc20d]" />
+                      <Music className="w-6 h-6 mr-3 text-blue-400" />
                       <h2 className="text-xl font-semibold">Culture</h2>
                     </div>
                     <ul className="space-y-2">
@@ -192,7 +187,7 @@ const CountryDetail = () => {
 
                   <div className="bg-gray-700 p-6 rounded-lg">
                     <div className="flex items-center mb-4">
-                      <Coffee className="w-6 h-6 mr-3 text-[#ffc20d]" />
+                      <Coffee className="w-6 h-6 mr-3 text-blue-400" />
                       <h2 className="text-xl font-semibold">Cuisine</h2>
                     </div>
                     <ul className="space-y-2">

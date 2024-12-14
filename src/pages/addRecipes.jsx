@@ -7,7 +7,7 @@ import { useCookies } from "react-cookie";
 // const server = process.env.REACT_APP_SERVER_URL;
 const server = "https://backend-p1-cgas.onrender.com";
 // const server = "http://localhost:3001/";
-
+//const add reci[pes page]
 const AddRecipes = () => {
   const userID = useGetUserID();
   const navigate = useNavigate();
@@ -23,11 +23,13 @@ const AddRecipes = () => {
     userOwner: userID,
   });
 
+  // used to make change in recipe page
   const handleChange = (event) => {
     const { name, value } = event.target;
     setRecipe({ ...recipe, [name]: value });
   };
 
+  // handleingredients in recipepage
   const handleIngredientChange = (event, idx) => {
     const { value } = event.target;
     const ingredients = [...recipe.ingredients];
@@ -35,6 +37,7 @@ const AddRecipes = () => {
     setRecipe({ ...recipe, ingredients });
   };
 
+  // handleingredients in instructions
   const handleInstructionChange = (event, idx) => {
     const { value } = event.target;
     const instructions = [...recipe.instructions];
@@ -42,20 +45,24 @@ const AddRecipes = () => {
     setRecipe({ ...recipe, instructions });
   };
 
+  // add ingredients in recipepage
   const addIngredient = () => {
     setRecipe({ ...recipe, ingredients: [...recipe.ingredients, ""] });
   };
 
+  // removeingredients  in recipepage
   const removeIngredient = (idx) => {
     const ingredients = [...recipe.ingredients];
     ingredients.splice(idx, 1);
     setRecipe({ ...recipe, ingredients });
   };
 
+  // addinstructions  in recipepage
   const addInstruction = () => {
     setRecipe({ ...recipe, instructions: [...recipe.instructions, ""] });
   };
 
+  // removeinstructions through add recipe pagee
   const removeInstruction = (idx) => {
     const instructions = [...recipe.instructions];
     instructions.splice(idx, 1);
@@ -83,6 +90,7 @@ const AddRecipes = () => {
     }
   };
 
+  // ui and ux for addrecipe page
   return (
     <div className="bg-[#212121] min-h-screen pt-20 md:pt-10">
       <section>

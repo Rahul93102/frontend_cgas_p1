@@ -54,6 +54,7 @@ const MyRecipes = () => {
     //   }
     // };
 
+    // fetchsaved page recipe there
     const fetchSavedRecipe = async () => {
       try {
         const response = await axios.get(
@@ -77,6 +78,7 @@ const MyRecipes = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
 
   function openModal(recipe) {
+    // open the modal
     setSelectedRecipe(recipe);
     setIsOpen(true);
   }
@@ -85,6 +87,8 @@ const MyRecipes = () => {
     setSelectedRecipe(null);
     setIsOpen(false);
   }
+
+  // ui and ux for save page
 
   return (
     <div className="bg-[#212121] min-h-screen pt-20">

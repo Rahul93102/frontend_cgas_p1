@@ -1,9 +1,10 @@
 import React from "react";
 
+//about us page
 const AboutUs = () => {
   return (
     <div className="about-us-page">
-      <div className="min-h-screen pt-24 px-8 md:px-20 lg:px-40 bg-[#212121] text-white">
+      {/* <div className="min-h-screen pt-24 px-8 md:px-20 lg:px-40 bg-[#212121] text-white">
         <h1 className="sm:pt-5 sm:pb-1 main-heading text-xl text-[#ffc20d] sm:text-3xl">
           Welcome to Foodify
         </h1>
@@ -82,7 +83,7 @@ const AboutUs = () => {
           <p>With culinary passion,</p>
           <p className="pt-1 font-bold text-[#ffc20d]">The Foodify Team</p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

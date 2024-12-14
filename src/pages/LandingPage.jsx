@@ -39,5 +39,5 @@ function Home() {
     </div>
   );
 }
-
+// get started page
 export default Home;

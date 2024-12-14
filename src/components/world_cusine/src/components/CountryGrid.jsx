@@ -4,9 +4,11 @@ import CountryCard from "./CountryCard";
 import { useCountryData } from "../hooks/useCountryData";
 
 const CountryGrid = ({ searchQuery, selectedRegion }) => {
+  // uses display filteredCountries
   const filteredCountries = useCountryData(searchQuery, selectedRegion);
   const countryEntries = Object.entries(filteredCountries);
 
+  // uses to display the country grids
   return (
     <div className="container mx-auto px-4 py-8">
       {countryEntries.length === 0 ? (
@@ -23,6 +25,8 @@ const CountryGrid = ({ searchQuery, selectedRegion }) => {
     </div>
   );
 };
+
+// countryfrid propTypes
 
 CountryGrid.propTypes = {
   searchQuery: PropTypes.string.isRequired,
