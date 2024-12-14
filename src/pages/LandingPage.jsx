@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 import vid from "../assets/hero.mp4";
 import img from "../assets/hero0.jpg";
 
+// homepage for fethcing the all recipes that have been added so far
 function Home() {
   return (
     <div>

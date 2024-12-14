@@ -9,6 +9,7 @@ import jsPDF from "jspdf";
 
 // const server = process.env.REACT_APP_SERVER_URL;
 const server = "https://backend-p1-cgas.onrender.com";
+// const server = "http://localhost:3001/";
 
 const generatePDF = (recipe) => {
   const pdf = new jsPDF();

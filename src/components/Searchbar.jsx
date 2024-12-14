@@ -7,7 +7,10 @@ import jsPDF from "jspdf";
 
 // const server = process.env.REACT_APP_SERVER_URL;
 const server = "https://backend-p1-cgas.onrender.com";
+// const server = "http://localhost:30001/";
+// const server = "http://localhost:3001/";
 
+// used to share and generate pdf of recuipes
 const generatePDF = (recipe) => {
   const pdf = new jsPDF();
   const margin = 20;
@@ -42,6 +45,7 @@ const generatePDF = (recipe) => {
   pdf.save(`${recipe.name}.pdf`);
 };
 
+// searchbar functionalites of recipes
 const Searchbar = () => {
   const [searchResult, setSearchResult] = useState([]);
   const [key, setKey] = useState("");
@@ -77,6 +81,7 @@ const Searchbar = () => {
     if (cookies.access_token) fetchSavedRecipe();
   }, [cookies.access_token, userID]);
 
+  // const save the recipe in my recipe
   const saveRecipe = async (recipeID) => {
     try {
       const response = await axios.put(
@@ -89,6 +94,8 @@ const Searchbar = () => {
       console.error(err);
     }
   };
+
+  // used to isRecipesaved
   const isRecipeSaved = (id) => savedRecipes && savedRecipes.includes(id);
 
   const [selectedRecipe, setSelectedRecipe] = useState(null);
@@ -99,11 +106,13 @@ const Searchbar = () => {
     setIsOpen(true);
   }
 
+  // close the modal
   function closeModal() {
     setSelectedRecipe(null);
     setIsOpen(false);
   }
 
+  // useeffect functionalites
   useEffect(() => {
     const search = async () => {
       try {

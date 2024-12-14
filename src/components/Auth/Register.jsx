@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 
 // const server = process.env.REACT_APP_SERVER_URL;
 const server = "https://backend-p1-cgas.onrender.com";
+// const server = "http://localhost:3001/";
 
 export const Register = () => {
   return (

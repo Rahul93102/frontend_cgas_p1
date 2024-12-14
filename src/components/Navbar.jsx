@@ -2,23 +2,28 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
+import DailyRecommendation from "./Daily_recommendation";
 
 const Navbar = () => {
   const [cookies, setCookies] = useCookies(["access_token"]);
   const Navigate = useNavigate();
 
+  // logout features there
   const logout = () => {
     setCookies("access_token", "");
     window.localStorage.removeItem("userID");
     Navigate("/home");
   };
 
+  // close the menu feature baar three
   const closeMenu = () => {
     document
       .getElementById("menuToggle")
       .querySelector("input").checked = false;
   };
 
+  // recipe recommendation system with navabar functionalites
+  // added all the features indivually lister there which will routed there later  include both mobile and desktop view
   return (
     <div>
       <nav className="fixed hidden md:flex z-30 w-full md:px-10 px-5 text-white backdrop-blur-md shadow-md">
@@ -48,12 +53,21 @@ const Navbar = () => {
                   </svg>
                 </Link>
               </li>
+              {/* Add link to DailyRecommendation */}
               <li>
                 <Link
-                  to="/about-us"
+                  to="/daily-recommendation"
+                  className="block hover:underline hover:underline-offset-4 focus:underline focus:underline-offset-8  py-2 rounded focus:text-[#ffc20d] md:hover:bg-transparent "
+                >
+                  Recommendation
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/world-home"
                   className="md:pl-10 hover:underline hover:underline-offset-4 focus:underline focus:underline-offset-8 block py-2 rounded focus:text-[#ffc20d] md:hover:bg-transparent"
                 >
-                  About Us
+                  world
                 </Link>
               </li>
               <li>
@@ -111,6 +125,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+
       <div className="fixed z-50 backdrop-blur-sm md:hidden grid">
         <nav role="navigation">
           <div id="menuToggle">
@@ -132,11 +147,11 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  to="/about-us"
+                  to="/world-home"
                   onClick={closeMenu}
                   className="text-2xl my-3 text-white focus:underline focus:underline-offset-8 block py-2 rounded focus:text-[#ffc20d] md:hover:bg-transparent"
                 >
-                  About Us
+                  world-home
                 </Link>
               </li>
               <li>
@@ -146,6 +161,16 @@ const Navbar = () => {
                   className="text-2xl my-3 text-white focus:underline focus:underline-offset-8 block py-2 rounded focus:text-[#ffc20d] md:hover:bg-transparent"
                 >
                   Search
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="/daily-recommendation"
+                  onClick={closeMenu}
+                  className="text-2xl my-3 text-white focus:underline focus:underline-offset-8 block py-2 rounded focus:text-[#ffc20d] md:hover:bg-transparent"
+                >
+                  Recommendation
                 </Link>
               </li>
 
@@ -204,11 +229,6 @@ const Navbar = () => {
                   </>
                 )}
               </li>
-              <img
-                src="/assets/logo.png"
-                alt="logo"
-                className="w-20 absolute right-10 bottom-10"
-              />
             </ul>
           </div>
         </nav>
@@ -217,4 +237,5 @@ const Navbar = () => {
   );
 };
 
+// include all features addition phone and mobile
 export default Navbar;

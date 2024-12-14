@@ -7,6 +7,7 @@ import Modal from "react-modal";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 const server = "https://backend-p1-cgas.onrender.com";
+// const server = "http://localhost:3001/";
 
 // const server = process.env.REACT_APP_SERVER_URL;
 const generatePDF = (recipe) => {
